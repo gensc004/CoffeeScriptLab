@@ -8,10 +8,14 @@ removeLastLetterInArray = (array) ->
 
 definedArray = (x for x in [30..5] by -5)
 
-numberOfStudents = math: 20, CSci: 15, Chemistry: 100, English: 1
-
+numberOfStudents = math: 40, CSci: 30, Chemistry: 120, English: 10
+sum = 0
+sumFunction = (someting) -> sum += someting
+sumFunction total for theClass, total in numberOfStudents
 students = for theClass, total of numberOfStudents
-  "#{theClass} has #{total}"
+
+  "#{total} is the percent of students in the class, #{theClass}"
+
 
 
 

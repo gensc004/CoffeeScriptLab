@@ -4,6 +4,7 @@ add3Array = require('./intro').add3Array
 removeLastLetterInArray = require('./intro').removeLastLetterInArray
 definedArray = require('./intro').definedArray
 students = require('./intro').students
+whileLoop = require('./intro').whileLoop
 
 describe "testing add3", ->
   it "should return 13", ->
