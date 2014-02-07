@@ -56,6 +56,15 @@ describe "testing removeFirstNElements n less than 0 ", ->
     assert.deepEqual(removeFirstNElements(['cat','dog','frog','horse'], -1), [])
 
 
+describe "testing replaceThirdElement", ->
+  it "should return ['cat','dog','toad','horse']", ->
+    assert.deepEqual(replaceThirdElement(['cat','dog','frog','horse']), ['cat','dog','toad','horse'])
+
+describe "testing replaceThirdElement where less than 3 elements", ->
+  it "should return ['cat','dog']", ->
+    assert.deepEqual(replaceThirdElement(['cat','dog']), ['cat','dog'])
+
+
 
 #functions
 
