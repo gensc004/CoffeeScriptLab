@@ -30,6 +30,10 @@ percentOfStudents = (array)->
 
 
 
+removeFirstTwoElements = (array) ->
+
+
+
 
 module.exports.add3 = add3
 module.exports.add3Array = add3Array
@@ -37,3 +41,4 @@ module.exports.removeLastLetterInArray = removeLastLetterInArray
 module.exports.definedArray = definedArray
 module.exports.percentOfStudents = percentOfStudents
 module.exports.sumArray =sumArray
+module.exports.removeFirstTwoElements =removeFirstTwoElements()

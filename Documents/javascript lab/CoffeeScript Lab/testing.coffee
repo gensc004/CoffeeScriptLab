@@ -6,6 +6,7 @@ definedArray = require('./intro').definedArray
 percentOfStudents = require('./intro').percentOfStudents
 whileLoop = require('./intro').whileLoop
 sumArray = require('./intro').sumArray
+removeFirstTwoElements = require('./intro').removeFirstTwoElements
 
 describe "testing add3", ->
   it "should return 13", ->
@@ -31,3 +32,13 @@ describe "testing numberOfStudents", ->
 describe "testing sumArray", ->
   it "should return 105", ->
     assert.deepEqual(sumArray([30, 25,20, 15,10,5]),105)
+
+
+describe "testing arraySplicing remove two elements", ->
+  it "should return ", ->
+    assert.deepEqual(removeFirstTwoElements(['cat','dog','frog','horse']), ['frog', 'horse'])
+
+
+describe "testing array splicing with just 1 element", ->
+  it "should return an empty array", ->
+    assert.deepEqual(removeFirstTwoElements(['cat']), [])
