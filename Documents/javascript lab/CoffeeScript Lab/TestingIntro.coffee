@@ -37,7 +37,7 @@ describe "testing removeFirstTwoElements with just 1 element", ->
 
 describe "testing removeFirstAndLastElements", ->
   it "should return ['frog', 'horse']", ->
-    assert.deepEqual(removeFirstTwoElements(['cat','dog','frog','horse']), ['dog','frog'])
+    assert.deepEqual(removeFirstAndLastElements(['cat','dog','frog','horse']), ['dog','frog'])
 
 describe "testing removeFirstAndLast with just 2 element", ->
   it "should return an empty array", ->
@@ -75,4 +75,10 @@ removeFirstTwoElements = (array) ->
   if array.length <= 2
     []
   else
-    array[2..array.length]
+    array[2..array.length - 1]
+
+removeFirstAndLastElements = (array) ->
+  if array.length <= 2
+    []
+  else
+    array[1..array.length - 2]
