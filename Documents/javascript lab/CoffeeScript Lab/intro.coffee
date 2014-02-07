@@ -25,12 +25,11 @@ percentOfStudents = (array)->
   students = for theClass, total of array
     "#{theClass} has " + total/sum*100 + "% of students"
 
-
-
-
-
-
 removeFirstTwoElements = (array) ->
+  if array.length < 2
+    []
+  else
+    array[2..array.length]
 
 
 
@@ -41,4 +40,4 @@ module.exports.removeLastLetterInArray = removeLastLetterInArray
 module.exports.definedArray = definedArray
 module.exports.percentOfStudents = percentOfStudents
 module.exports.sumArray =sumArray
-module.exports.removeFirstTwoElements =removeFirstTwoElements()
+module.exports.removeFirstTwoElements =removeFirstTwoElements
