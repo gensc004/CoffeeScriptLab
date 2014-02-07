@@ -1,12 +1,4 @@
 assert = require 'assert'
-add3 = require('./intro').add3
-add3Array = require('./intro').add3Array
-removeLastLetterInArray = require('./intro').removeLastLetterInArray
-definedArray = require('./intro').definedArray
-percentOfStudents = require('./intro').percentOfStudents
-whileLoop = require('./intro').whileLoop
-sumArray = require('./intro').sumArray
-removeFirstTwoElements = require('./intro').removeFirstTwoElements
 
 describe "testing add3", ->
   it "should return 13", ->
@@ -34,11 +26,53 @@ describe "testing sumArray", ->
     assert.deepEqual(sumArray([30, 25,20, 15,10,5]),105)
 
 
-describe "testing arraySplicing remove two elements", ->
-  it "should return ", ->
+describe "testing removeFirstTwoElements", ->
+  it "should return ['frog', 'horse']", ->
     assert.deepEqual(removeFirstTwoElements(['cat','dog','frog','horse']), ['frog', 'horse'])
 
 
-describe "testing array splicing with just 1 element", ->
+describe "testing removeFirstTwoElements with just 1 element", ->
   it "should return an empty array", ->
     assert.deepEqual(removeFirstTwoElements(['cat']), [])
+
+describe "testing removeFirstAndLastElements", ->
+  it "should return ['frog', 'horse']", ->
+    assert.deepEqual(removeFirstTwoElements(['cat','dog','frog','horse']), ['dog','frog'])
+
+describe "testing removeFirstAndLast with just 2 element", ->
+  it "should return an empty array", ->
+    assert.deepEqual(removeFirstAndLastElements(['cat','dog']), [])
+
+
+#add3 Function
+add3 = (x) -> x+3;
+
+#add3 to an entire array
+add3Array = (array) -> add3 x for x in array
+
+#removes last letter in string for each string in array except if string is red.
+removeLastLetterInArray = (array) ->
+  index.substring 0, index.length - 1 for index in array when index isnt 'red'
+
+#creates an array from 30 to 5 where each number decreases by 5 in the array.
+definedArray = (x for x in [30..5] by -5)
+
+# sums numbers in array
+sumArray = (array) ->
+  sum = 0
+  sum += number for number in array
+  sum
+
+
+percentOfStudents = (array)->
+  temp = for theClass, total of array
+    total
+  sum = sumArray(temp)
+  students = for theClass, total of array
+    "#{theClass} has " + total/sum*100 + "% of students"
+
+removeFirstTwoElements = (array) ->
+  if array.length <= 2
+    []
+  else
+    array[2..array.length]
