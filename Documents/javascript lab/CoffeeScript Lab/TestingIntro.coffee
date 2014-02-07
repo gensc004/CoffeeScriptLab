@@ -43,6 +43,21 @@ describe "testing removeFirstAndLast with just 2 element", ->
   it "should return an empty array", ->
     assert.deepEqual(removeFirstAndLastElements(['cat','dog']), [])
 
+describe "testing removeFirstNElements more than array size", ->
+  it "should return []", ->
+    assert.deepEqual(removeFirstNElements(['cat','dog','frog','horse'], 5), [])
+
+describe "testing removeFirstNElements", ->
+  it "should return ['frog','horse']", ->
+    assert.deepEqual(removeFirstNElements(['cat','dog','frog','horse'], 2), ['frog','horse'])
+
+describe "testing removeFirstNElements n less than 0 ", ->
+  it "should return []", ->
+    assert.deepEqual(removeFirstNElements(['cat','dog','frog','horse'], -1), [])
+
+
+
+#functions
 
 #add3 Function
 add3 = (x) -> x+3;
@@ -82,3 +97,9 @@ removeFirstAndLastElements = (array) ->
     []
   else
     array[1..array.length - 2]
+
+removeFirstNElements = (array, n) ->
+  if array.length <= n or n <= 0
+    []
+  else
+    array.splice(n, (array.length) -1)
