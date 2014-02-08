@@ -1,5 +1,5 @@
-formString = '<form>
-    <select id="1stCG" name="1stCG">
+formString = '<form method="post" action="/gpa">\n>
+    <select id="stCG" name="1stCG">
         <option value="4.0">A</option>
         <option value="3.66">A-</option>
         <option value="3.33">B+</option>
@@ -13,7 +13,7 @@ formString = '<form>
         <option value="0.66">D-</option>
         <option value="0.0">D-</option>
     </select>
-    <select id="1stCredits" name="1stCredits">
+    <select id="stCredits" name="1stCredits">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -84,12 +84,15 @@ formString = '<form>
         <option value="5">5</option>
     </select><br />
 <input type="button" id="CalcGPA" value="Calculate GPA" name="Calculate GPA">
+
+
 </form>'
 
 headerStr = '<!DOCTYPE html>\n
 <html>\n
 <head>\n
     <title>GPA Calculator</title>\n
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />\n
 </head>\n
 <body>\n'
 
@@ -119,7 +122,4 @@ exports.formResponse = (req, res) ->
   res.render 'gpa'
 
 exports.postResponse = (req, res) ->
-  res.send headerStr + formString + '<p>You said ' + req.body.text + '</p>' + footerStr
-
-
-
+  res.send headerStr + formString + '<p>Your GPA is ' + calculateGPA(arrayMaker(req.body.stGC),arrayMaker(req.body.stCredits))'</p>' + footerStr

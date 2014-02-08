@@ -8,7 +8,7 @@
 <body>'
 <h1>GPA Calculator</h1>
 
-<form>
+<form method="post" action="/gpa">
     <select id="1stCG" name="1stCG">
         <option value="4.0">A</option>
         <option value="3.66">A-</option>
@@ -93,6 +93,7 @@
         <option value="4">4</option>
         <option value="5">5</option>
     </select><br />
+    <p id="GPA"></p>
 <input type="button" id="CalcGPA" value="Calculate GPA" name="Calculate GPA">
 </form>
 
