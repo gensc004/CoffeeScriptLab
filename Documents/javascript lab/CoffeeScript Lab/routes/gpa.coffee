@@ -96,11 +96,23 @@ headerStr = '<!DOCTYPE html>\n
 footerStr = '</body>\n</html>'
 
 
-calculateClass = (grade, numCredits) ->
+arrayMaker = (inputs...) ->
+  inputs
 
-calculateGPA = (gpaArray) ->
+sumArray = (array) ->
+  sum = 0
+  sum += number for number in array
+  sum
 
-module.exports.calculateClass = calculateClass
+calculateGPA = (gradeArray,creditArray) ->
+ sum = sumArray(creditArray)
+ gradeCredit = 0
+ gradeCredit += gradeArray[i]*creditArray[i] for i in [0..creditArray.length-1]
+ gradeCredit/sum
+
+
+module.exports.arrayMaker= arrayMaker
+module.exports.sumArray = sumArray
 module.exports.calculateGPA = calculateGPA
 
 exports.formResponse = (req, res) ->
