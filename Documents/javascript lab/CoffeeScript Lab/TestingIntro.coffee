@@ -118,13 +118,17 @@ removeFirstNElements = (array, n) ->
   else
     array.splice(n, -1 + array.length)
 
+
+    #uses 2 operator alias
 replaceThirdAndFourthElement = (array, replace1, replace2) ->
-  if array.length <= 2
+  if not(array.length > 2)
     array
+  else if array.length is 3
+    array[2] = [replace1]
   else
     array[2..3] = [replace1,replace2]
   array
 
 copyArray = (array) ->
-  
+  array[..]
 
