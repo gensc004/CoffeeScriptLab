@@ -11,4 +11,20 @@ describe "testing CalculateGPA", ->
   it "should return 2.842", ->
     assert.deepEqual(calculateGPA([4.0,3.66,2.33,1.0,0.0],[5,4,3,1,2]), 2.842)
 
+describe "testing calculateNumberGrade", ->
+  it "should return correct number grade", ->
+    assert.deepEqual(calculateNumGrade("A"), 4.0)
+    assert.deepEqual(calculateNumGrade("A-"), 3.66)
+    assert.deepEqual(calculateNumGrade("B+"), 3.33)
+    assert.deepEqual(calculateNumGrade("B"), 3.0)
+    assert.deepEqual(calculateNumGrade("B-"), 2.66)
+    assert.deepEqual(calculateNumGrade("C+"), 2.33)
+    assert.deepEqual(calculateNumGrade("C"), 2.0)
+    assert.deepEqual(calculateNumGrade("C-"), 1.66)
+    assert.deepEqual(calculateNumGrade("D+"), 1.33)
+    assert.deepEqual(calculateNumGrade("D"), 1.0)
+    assert.deepEqual(calculateNumGrade("D-"), 0.66)
+    assert.deepEqual(calculateNumGrade("F"), 0.0)
+
+
 
