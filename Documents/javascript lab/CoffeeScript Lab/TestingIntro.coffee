@@ -64,6 +64,11 @@ describe "testing replaceThirdAndFourthElement where less than 3 elements", ->
   it "should return ['cat','dog']", ->
     assert.deepEqual(replaceThirdAndFourthElement(['cat','dog'], 'frog', 'horse'), ['cat','dog'])
 
+describe "testing copyArray", ->
+  it "should return ['cat','dog','frog','horse']", ->
+    assert.deepEqual(copyArray(['cat','dog','frog','horse']), ['cat','dog','frog','horse'])
+
+
 
 
 #functions
@@ -119,4 +124,7 @@ replaceThirdAndFourthElement = (array, replace1, replace2) ->
   else
     array[2..3] = [replace1,replace2]
   array
+
+copyArray = (array) ->
+  
 
