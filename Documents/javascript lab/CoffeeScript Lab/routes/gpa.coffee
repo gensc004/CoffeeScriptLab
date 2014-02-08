@@ -83,7 +83,7 @@ formString = '<form method="post" action="/gpa">
         <option value="4">4</option>
         <option value="5">5</option>
     </select><br />
-<input type="button" id="CalcGPA" value="Calculate GPA" name="Calculate GPA">
+<input type="submit" id="CalcGPA" value="Calculate GPA" name="Calculate GPA">
 </form>'
 
 headerStr = '<!DOCTYPE html>\n
