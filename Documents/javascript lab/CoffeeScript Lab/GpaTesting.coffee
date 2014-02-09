@@ -2,6 +2,7 @@ assert = require 'assert'
 arrayMaker = require('./routes/gpa').arrayMaker
 asumArray = require('./routes/gpa').sumArray
 calculateGPA = require('./routes/gpa').calculateGPA
+calculateNumGrade = require('./routes/gpa').calculateNumGrade
 
 describe "testing arrayMaker", ->
   it "should return", ->
@@ -9,7 +10,12 @@ describe "testing arrayMaker", ->
 
 describe "testing CalculateGPA", ->
   it "should return 2.842", ->
-    assert.deepEqual(calculateGPA([4.0,3.66,2.33,1.0,0.0],[5,4,3,1,2]), 2.842)
+    assert.deepEqual(calculateGPA(["A","A-","C+","D","F"],[5,4,3,1,2]), 2.842)
+  it "should return 4.0", ->
+    assert.deepEqual(calculateGPA(["A"],[5]), 4.0)
+  it "should return 3.", ->
+    assert.deepEqual(calculateGPA(["A","B"],[5,3]), 3.625)
+
 
 describe "testing calculateNumberGrade", ->
   it "should return correct number grade", ->
