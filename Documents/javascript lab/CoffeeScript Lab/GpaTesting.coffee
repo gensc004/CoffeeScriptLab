@@ -5,7 +5,7 @@ calculateGPA = require('./routes/gpa').calculateGPA
 calculateNumGrade = require('./routes/gpa').calculateNumGrade
 
 describe "testing arrayMaker", ->
-  it "should return", ->
+  it "should return [4,3,2,1,0,5]", ->
     assert.deepEqual(arrayMaker(4,3,2,1,0,5), [4,3,2,1,0,5])
 
 describe "testing CalculateGPA", ->
