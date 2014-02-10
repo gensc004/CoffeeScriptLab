@@ -68,10 +68,18 @@ describe "testing copyArray", ->
   it "should return ['cat','dog','frog','horse']", ->
     assert.deepEqual(copyArray(['cat','dog','frog','horse']), ['cat','dog','frog','horse'])
 
+describe "testing the existential operator", ->
+  it "should return [true]", ->
+    assert.deepEqual(existentialOperator(true), true)
+
+describe "testing the existential operator", ->
+  it "should return [false]", ->
+    assert.deepEqual(existentialOperator(false), false)
 
 
 
-#functions
+
+#functionstrue
 
 #add3 Function
 add3 = (x) -> x+3;
@@ -131,4 +139,11 @@ replaceThirdAndFourthElement = (array, replace1, replace2) ->
 
 copyArray = (array) ->
   array[..]
+
+existentialOperator = (boolean) ->
+  if (boolean == true)
+    var1 = 0
+  var1?
+
+
 
