@@ -76,8 +76,27 @@ describe "testing the existential operator", ->
   it "should return [false]", ->
     assert.deepEqual(existentialOperator(false), false)
 
+describe "testing the existential operator with a number", ->
+  it "should return [true]", ->
+    assert.deepEqual(existentialOperatorWithNumber(5), true)
+
+describe "testing the existential operator with a number", ->
+  it "should return [false]", ->
+    assert.deepEqual(existentialOperatorWithNumber(2), false)
 
 
+
+describe "testing favoriteFlavor with Splats, list of flavors", ->
+  it "should return chocolate", ->
+    assert.deepEqual(favoriteFlavor("chocolate", "vanilla", "strawberry", "cookie dough"), "chocolate")
+
+describe "testing favoriteFlavor with Splats, just 1 flavor", ->
+  it "should return chocolate", ->
+    assert.deepEqual(favoriteFlavor("chocolate"), "chocolate")
+
+describe "testing favoriteFlavor with Splats, with 0 flavors", ->
+  it "should return No favorite flavor.", ->
+    assert.deepEqual(favoriteFlavor(), "No favorite flavor.")
 
 #functionstrue
 
@@ -141,9 +160,19 @@ copyArray = (array) ->
   array[..]
 
 existentialOperator = (boolean) ->
-  if (boolean == true)
+  if (boolean is true)
     var1 = 0
   var1?
 
+existentialOperatorWithNumber = (number) ->
+  if (number > 3)
+    myvar = 0
+  myvar?
 
+favoriteFlavor = (bestflavor, otherflavors...) ->
+  if bestflavor?
+    best = bestflavor
+  else
+    best = "No favorite flavor."
+  best
 
