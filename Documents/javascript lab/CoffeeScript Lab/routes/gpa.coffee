@@ -125,7 +125,7 @@ calculateGPA = (gradeArray,creditArray) ->
  sum = sumArray(creditArray)
  gradeCredit = 0
  gradeCredit += creditArray[i]*calculateNumGrade(gradeArray[i]) for i in [0..creditArray.length-1]
- gradeCredit/sum
+ (gradeCredit/sum).toFixed(2)
 
 module.exports.arrayMaker= arrayMaker
 module.exports.sumArray = sumArray
@@ -136,4 +136,4 @@ exports.gpaResponse = (req, res) ->
   res.render 'gpa'
 
 exports.gpaPostResponse = (req, res) ->
-  res.send headerStr + formString + '<p>Your GPA is '  + calculateGPA(arrayMaker(req.body.Grades1,req.body.Grades2),arrayMaker(req.body.Credits1,req.body.Credits2)) + '</p>' + footerStr
+  res.send headerStr + formString + '<p>Your GPA is '  + calculateGPA(arrayMaker(req.body.Grades1,req.body.Grades2,req.body.Grades3,req.body.Grades4),arrayMaker(req.body.Credits1,req.body.Credits2,req.body.Credits3,req.body.Credits4)) + '</p>' + footerStr

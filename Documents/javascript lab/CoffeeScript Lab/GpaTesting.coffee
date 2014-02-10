@@ -9,12 +9,12 @@ describe "testing arrayMaker", ->
     assert.deepEqual(arrayMaker(4,3,2,1,0,5), [4,3,2,1,0,5])
 
 describe "testing CalculateGPA", ->
-  it "should return 2.842", ->
-    assert.deepEqual(calculateGPA(["A","A-","C+","D","F"],[5,4,3,1,2]), 2.842)
+  it "should return 2.84", ->
+    assert.deepEqual(calculateGPA(["A","A-","C+","D","F"],[5,4,3,1,2]), 2.84)
   it "should return 4.0", ->
     assert.deepEqual(calculateGPA(["A"],[5]), 4.0)
-  it "should return 3.", ->
-    assert.deepEqual(calculateGPA(["A","B"],[5,3]), 3.625)
+  it "should return 3.63", ->
+    assert.deepEqual(calculateGPA(["A","B"],[5,3]), 3.63)
 
 
 describe "testing calculateNumberGrade", ->
