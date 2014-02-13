@@ -1,5 +1,5 @@
-formString = '<form method="post" action="/gpa">
-    <select id="Grades1" name="Grades1">
+formString = '<form id="GC" method="post" action="/gpa">
+   <select id="Grades1" name="Grades1">
         <option value="A">A</option>
         <option value="A-">A-</option>
         <option value="B+">B+</option>
@@ -22,7 +22,7 @@ formString = '<form method="post" action="/gpa">
         <option value="5.0">5</option>
     </select><br />
     <select id="Grades2" name="Grades2">
-        <option value="4.0">A</option>
+        <option value="A">A</option>
         <option value="A-">A-</option>
         <option value="B+">B+</option>
         <option value="B">B</option>
@@ -43,7 +43,7 @@ formString = '<form method="post" action="/gpa">
         <option value="4.0">4</option>
         <option value="5.0">5</option>
     </select><br />
-    <select id="Grades3" name="Grades3">n
+    <select id="Grades3" name="Grades3">
         <option value="A">A</option>
         <option value="A-">A-</option>
         <option value="B+">B+</option>
@@ -53,7 +53,7 @@ formString = '<form method="post" action="/gpa">
         <option value="C">C</option>
         <option value="C-">C-</option>
         <option value="D+">D+</option>
-        <option value="D">D</home/donat056/option>
+        <option value="D">D</option>
         <option value="D-">D-</option>
         <option value="F">F</option>
     </select>
@@ -74,7 +74,7 @@ formString = '<form method="post" action="/gpa">
         <option value="C+">C+</option>
         <option value="C">C</option>
         <option value="C-">C-</option>
-        <option value="D+">D+</option>A
+        <option value="D+">D+</option>
         <option value="D">D</option>
         <option value="D-">D-</option>
         <option value="F">F</option>
@@ -87,8 +87,8 @@ formString = '<form method="post" action="/gpa">
         <option value="4.0">4</option>
         <option value="5.0">5</option>
     </select><br />
-<input type="submit" id="CalcGPA" value="Calculate GPA" name="Calculate GPA">
-</form>'
+    <input type="submit" id="CalcGPA" value="Calculate GPA" name="Calculate GPA">
+    </form>'
 
 headerStr = '<!DOCTYPE html>\n
 <html>\n
@@ -129,7 +129,10 @@ calculateGPA = (gradeArray,creditArray) ->
  sum = sumArray(creditArray)
  gradeCredit = 0
  gradeCredit += creditArray[i]*calculateNumGrade(gradeArray[i]) for i in [0..creditArray.length-1]
- (gradeCredit/sum).toFixed(2)
+ if sum isnt 0
+  (gradeCredit/sum).toFixed(2)
+ else
+   "not available, add some classes."
 
 module.exports.arrayMaker= arrayMaker
 module.exports.sumArray = sumArray
@@ -140,4 +143,5 @@ exports.gpaResponse = (req, res) ->
   res.render 'gpa'
 
 exports.gpaPostResponse = (req, res) ->
-  res.send headerStr + formString + '<p>Your GPA is '  + calculateGPA(arrayMaker(req.body.Grades1,req.body.Grades2,req.body.Grades3,req.body.Grades4),arrayMaker(req.body.Credits1,req.body.Credits2,req.body.Credits3,req.body.Credits4)) + '</p>' + footerStr
+  finalGpa = calculateGPA(arrayMaker(req.body.Grades1,req.body.Grades2,req.body.Grades3,req.body.Grades4),arrayMaker(req.body.Credits1,req.body.Credits2,req.body.Credits3,req.body.Credits4))
+  res.send headerStr + formString + '<p>Your GPA is '  + finalGpa + '</p>' + footerStr

@@ -15,6 +15,8 @@ describe "testing CalculateGPA", ->
     assert.deepEqual(calculateGPA(["A"],[5]), 4.0)
   it "should return 3.63", ->
     assert.deepEqual(calculateGPA(["A","B"],[5,3]), 3.63)
+    it "should return not available, add some classes.", ->
+    assert.deepEqual(calculateGPA(["A","B"],[0]), "not available, add some classes.")
 
 
 describe "testing calculateNumberGrade", ->
