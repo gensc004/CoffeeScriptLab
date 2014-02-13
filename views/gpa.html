@@ -3,14 +3,12 @@
 <head>
     <title>GPA Calculator</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-    <script>
-
-    </script>
 </head>
 <body>
 <h1>GPA Calculator</h1>
 
 <form id="GC" method="post" action="/gpa">
+    <label for="Grades1">Grade:</label>
     <select id="Grades1" name="Grades1">
         <option value="A">A</option>
         <option value="A-">A-</option>
@@ -25,6 +23,7 @@
         <option value="D-">D-</option>
         <option value="F">F</option>
     </select>
+    <label for="Credits1">Credits:</label>
     <select id="Credits1" name="Credits1">
         <option value="0.0">0</option>
         <option value="1.0">1</option>
@@ -33,6 +32,7 @@
         <option value="4.0">4</option>
         <option value="5.0">5</option>
     </select><br />
+    <label for="Grades2">Grade:</label>
     <select id="Grades2" name="Grades2">
         <option value="A">A</option>
         <option value="A-">A-</option>
@@ -47,6 +47,7 @@
         <option value="D-">D-</option>
         <option value="F">F</option>
     </select>
+    <label for="Credits2">Credits:</label>
     <select id="Credits2" name="Credits2">
         <option value="0.0">0</option>
         <option value="1.0">1</option>
@@ -55,6 +56,7 @@
         <option value="4.0">4</option>
         <option value="5.0">5</option>
     </select><br />
+    <label for="Grades3">Grade:</label>
     <select id="Grades3" name="Grades3">
         <option value="A">A</option>
         <option value="A-">A-</option>
@@ -69,6 +71,7 @@
         <option value="D-">D-</option>
         <option value="F">F</option>
     </select>
+    <label for="Credits3">Credits:</label>
     <select id="Credits3" name="Credits3">
         <option value="0.0">0</option>
         <option value="1.0">1</option>
@@ -77,6 +80,7 @@
         <option value="4.0">4</option>
         <option value="5.0">5</option>
     </select><br />
+    <label for="Grades4">Grade:</label>
     <select id="Grades4" name="Grades4">
         <option value="A">A</option>
         <option value="A-">A-</option>
@@ -91,6 +95,7 @@
         <option value="D-">D-</option>
         <option value="F">F</option>
     </select>
+    <label for="Credits4">Credits:</label>
     <select id="Credits4" name="Credits4">
         <option value="0.0">0</option>
         <option value="1.0">1</option>
@@ -101,6 +106,5 @@
     </select><br />
     <input type="submit" id="CalcGPA" value="Calculate GPA" name="Calculate GPA">
 </form>
-
 </body>
 </html>
