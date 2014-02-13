@@ -1,5 +1,6 @@
 formString = '<form id="GC" method="post" action="/gpa">
-   <select id="Grades1" name="Grades1">
+    <label for="Grades1">Grade:</label>
+    <select id="Grades1" name="Grades1">
         <option value="A">A</option>
         <option value="A-">A-</option>
         <option value="B+">B+</option>
@@ -13,6 +14,7 @@ formString = '<form id="GC" method="post" action="/gpa">
         <option value="D-">D-</option>
         <option value="F">F</option>
     </select>
+    <label for="Credits1">Credits:</label>
     <select id="Credits1" name="Credits1">
         <option value="0.0">0</option>
         <option value="1.0">1</option>
@@ -21,6 +23,7 @@ formString = '<form id="GC" method="post" action="/gpa">
         <option value="4.0">4</option>
         <option value="5.0">5</option>
     </select><br />
+    <label for="Grades2">Grade:</label>
     <select id="Grades2" name="Grades2">
         <option value="A">A</option>
         <option value="A-">A-</option>
@@ -35,6 +38,7 @@ formString = '<form id="GC" method="post" action="/gpa">
         <option value="D-">D-</option>
         <option value="F">F</option>
     </select>
+    <label for="Credits2">Credits:</label>
     <select id="Credits2" name="Credits2">
         <option value="0.0">0</option>
         <option value="1.0">1</option>
@@ -43,6 +47,7 @@ formString = '<form id="GC" method="post" action="/gpa">
         <option value="4.0">4</option>
         <option value="5.0">5</option>
     </select><br />
+    <label for="Grades3">Grade:</label>
     <select id="Grades3" name="Grades3">
         <option value="A">A</option>
         <option value="A-">A-</option>
@@ -57,6 +62,7 @@ formString = '<form id="GC" method="post" action="/gpa">
         <option value="D-">D-</option>
         <option value="F">F</option>
     </select>
+    <label for="Credits3">Credits:</label>
     <select id="Credits3" name="Credits3">
         <option value="0.0">0</option>
         <option value="1.0">1</option>
@@ -65,6 +71,7 @@ formString = '<form id="GC" method="post" action="/gpa">
         <option value="4.0">4</option>
         <option value="5.0">5</option>
     </select><br />
+    <label for="Grades4">Grade:</label>
     <select id="Grades4" name="Grades4">
         <option value="A">A</option>
         <option value="A-">A-</option>
@@ -79,6 +86,7 @@ formString = '<form id="GC" method="post" action="/gpa">
         <option value="D-">D-</option>
         <option value="F">F</option>
     </select>
+    <label for="Credits4">Credits:</label>
     <select id="Credits4" name="Credits4">
         <option value="0.0">0</option>
         <option value="1.0">1</option>
@@ -88,7 +96,7 @@ formString = '<form id="GC" method="post" action="/gpa">
         <option value="5.0">5</option>
     </select><br />
     <input type="submit" id="CalcGPA" value="Calculate GPA" name="Calculate GPA">
-    </form>'
+</form>'
 
 headerStr = '<!DOCTYPE html>\n
 <html>\n
